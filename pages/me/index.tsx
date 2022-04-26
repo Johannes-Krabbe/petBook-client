@@ -36,7 +36,7 @@ const Me: NextPage = () => {
 					setUsers(response.data);
 				}
 			})
-			.catch((e) => {});
+			.catch(console.error);
 		return <p>Loading</p>;
 	}
 };

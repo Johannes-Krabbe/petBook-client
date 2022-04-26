@@ -23,7 +23,7 @@ const Login: NextPage = () => {
 				if (response.status === 200) {
 					document.cookie = `pb_jwt=${response.data.token};max-age=${
 						60 * 60 * 24 * 30
-					};path=/`;
+					};path=/;domain=.johanneskrabbe.com`;
 
 					setLoginMessage("");
 					Router.push("/me");
