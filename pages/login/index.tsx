@@ -5,7 +5,7 @@ import { NextPage } from "next";
 import React, { useEffect } from "react";
 import { NavBar } from "../../components/navBar";
 import Router from "next/router";
-import { getCookie } from "../../helpers/cookieHelper";
+import { getCookie, setCookie } from "../../helpers/cookieHelper";
 
 const Login: NextPage = () => {
 	useEffect(() => {
@@ -21,9 +21,7 @@ const Login: NextPage = () => {
 			.post("/user/login", { username, password })
 			.then((response) => {
 				if (response.status === 200) {
-					document.cookie = `pb_jwt=${response.data.token};max-age=${
-						60 * 60 * 24 * 30
-					};path=/;domain=.johanneskrabbe.com`;
+					setCookie("pb_jwt", response.data.token);
 
 					setLoginMessage("");
 					Router.push("/me");

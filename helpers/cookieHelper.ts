@@ -20,9 +20,19 @@ export function setCookie(name: string, val: string) {
 	// Set it expire in 7 days
 	date.setTime(date.getTime() + 7 * 24 * 60 * 60 * 1000);
 
+	// set domain
+	const domain =
+		process.env.NODE_ENV === "production" ? ".johanneskrabbe.com" : "localhost";
+
 	// Set it
 	document.cookie =
-		name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
+		name +
+		"=" +
+		value +
+		"; expires=" +
+		date.toUTCString() +
+		"; path=/; domain=" +
+		domain;
 }
 
 export function deleteCookie(name: string) {
