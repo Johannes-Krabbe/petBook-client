@@ -41,6 +41,11 @@ export function deleteCookie(name: string) {
 	// Set it expire in -1 days
 	date.setTime(date.getTime() + -1 * 24 * 60 * 60 * 1000);
 
+	// set domain
+	const domain =
+		process.env.NODE_ENV === "production" ? ".johanneskrabbe.com" : "localhost";
+
 	// Set it
-	document.cookie = name + "=; expires=" + date.toUTCString() + "; path=/";
+	document.cookie =
+		name + "=; expires=" + date.toUTCString() + "; path=/; domain=" + domain;
 }
