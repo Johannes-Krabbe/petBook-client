@@ -7,7 +7,6 @@ import { Post } from "../components/post";
 import { NavBar } from "../components/navBar";
 
 const Home: NextPage = () => {
-	console.log(process.env.NODE_ENV);
 	return (
 		<div className="font-sans h-screen bg-gray-900">
 			<NavBar />

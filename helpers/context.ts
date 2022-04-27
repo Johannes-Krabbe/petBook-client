@@ -1,7 +1,10 @@
 import axios from "axios";
 
 export const request = axios.create({
-	baseURL: process.env.SERVER_URL,
+	baseURL:
+		process.env.NODE_ENV === "production"
+			? "https://petbook-api.johanneskrabbe.com"
+			: "http://localhost:3001",
 	timeout: 1000,
 	withCredentials: true,
 });
