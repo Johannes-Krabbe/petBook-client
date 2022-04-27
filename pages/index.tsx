@@ -7,14 +7,15 @@ import { Post } from "../components/post";
 import { NavBar } from "../components/navBar";
 
 const Home: NextPage = () => {
-  return (
-    <div className="font-sans h-screen bg-gray-900">
-      <NavBar />
-      <div className="flex flex-col items-center mt-20">
-        <Post userName="Johannes.Krabbe" title="my new setup" />
-      </div>
-    </div>
-  );
+	console.log(process.env.NODE_ENV);
+	return (
+		<div className="font-sans h-screen bg-gray-900">
+			<NavBar />
+			<div className="flex flex-col items-center mt-20">
+				<Post userName="Johannes.Krabbe" title="my new setup" />
+			</div>
+		</div>
+	);
 };
 
 export default Home;
