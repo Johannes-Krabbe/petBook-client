@@ -13,6 +13,7 @@ RUN yarn build
 FROM node:alpine AS runner
 
 ENV NODE_ENV production
+ENV SERVER_URL https://petbook-api.johanneskrabbe.com
 
 COPY --from=builder /usr/src/app/ .
 
