@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { NavBar } from "../../components/navBar";
 import { Pet } from "../../components/pet";
 import { request } from "../../helpers/context";
+import Router, { useRouter } from "next/router";
 
 const Pets: NextPage = () => {
 	const [pets, setPets] = React.useState<any[]>();
@@ -19,7 +20,6 @@ const Pets: NextPage = () => {
 	}, []);
 
 	if (pets) {
-		console.log(pets);
 		return (
 			<div className="font-sans min-h-screen bg-gray-900">
 				<NavBar />
@@ -33,6 +33,7 @@ const Pets: NextPage = () => {
 									species={pet.species}
 									race={pet.race}
 									gender={pet.gender}
+									uuid={pet.uuid}
 								/>
 							</div>
 						))}

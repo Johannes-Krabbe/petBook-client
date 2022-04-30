@@ -24,6 +24,12 @@ const Me: NextPage = () => {
 							<p className="font-bold">Bio:&nbsp;&nbsp;</p>
 							<p> {user.bio}</p>
 						</div>
+						<p className="mt-3 text-gray-300 text-center">
+							<a href="/me/pets">See your Pets</a>
+						</p>
+						<p className="mt-3 text-gray-300 text-center mb-3">
+							<a href="/me/createPet">Create a new Pet</a>
+						</p>
 					</div>
 				</div>
 			</div>
