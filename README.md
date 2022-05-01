@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PetBook
 
-## Getting Started
+PetBook is a social media platform build aroud pets. This Project is created as an learning project to learn more about frontend development.
+You can find a live version of the project under https://petbook.johanneskrabbe.com
 
-First, run the development server:
+## Setup this project locally
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- clone both, the client and the server repo (https://github.com/Johannes-Krabbe/petbook-client , https://github.com/Johannes-Krabbe/petbook-server)
+- setup the backend server (you can find the instuctions in README.md in the server repo)
+- create an .env.local and set (NODE_ENV=development)
+- run `yarn install`
+- run `yarn dev`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Documentation
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Security
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+The libary `next-secure-headers` adds an extra layer of security. (next.config.js)
+It creates an content security policy, adds xss protection, forces https redirects and limits the information send out in the Referer header.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### User interface
 
-## Learn More
+#### NavBar component
 
-To learn more about Next.js, take a look at the following resources:
+The Navbar component is part of every page. It contains a link to the home page on the left side and a Login button, which gets replaced by a username and a logout button once a user logs in.
+The NavBar does not rely on statemanagement yet, but makes a call to the api everytime it gets rendert.
+The Logout button simply deletes the session cookie and reloads the Page.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Home Page
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The Homepage features all posts.
 
-## Deploy on Vercel
+Future plan:
+User personalised feed with an limitit number of posts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Login and Register
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The login page (`/login`) contains two input fields (Username and Password). Once a user types in login credentials and submits them, a request will be made to the backend. If the login credentials are valid, the response will contain a jwt token. This token will be set as an session cookie, so the user can stay logged in. After that the user will be redirected to `/me`
+
+A user can register a new account on the register page (`/login/register`), if he enters a unique username and emailadress. The password has to be repeated once to prevent a user from missspelling it and as an result not having access to his account anymore.
+
+#### Creating pets and posts
+
+A user can create pets if he is logged in (`/me/createPet`) and then create posts for every pet (`/me/pets`).
