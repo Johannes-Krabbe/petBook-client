@@ -1844,6 +1844,11 @@ next-redux-wrapper@^7.0.5:
   resolved "https://registry.yarnpkg.com/next-redux-wrapper/-/next-redux-wrapper-7.0.5.tgz#109cd3fe02183b18fbd094924cfcbd21262039dc"
   integrity sha512-UFXdAWG5i+GFT8+Hoqpx3GArkPh34fVWF9YoA2VSHlBzsrPtnRd7NWM6FNSYUennpommTpWJ09mu+r/1UxyIkg==
 
+next-secure-headers@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/next-secure-headers/-/next-secure-headers-2.2.0.tgz#d4eb1b00a424f811c1455d1288990a4aad3026af"
+  integrity sha512-C7OfZ9JdSJyYMz2ZBMI/WwNbt0qNjlFWX9afUp8nEUzbz6ez3JbeopdyxSZJZJAzVLIAfyk6n73rFpd4e22jRg==
+
 next@*:
   version "12.1.5"
   resolved "https://registry.yarnpkg.com/next/-/next-12.1.5.tgz#7a07687579ddce61ee519493e1c178d83abac063"

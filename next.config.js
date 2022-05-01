@@ -1,9 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  env: {
-    SERVER_URL: process.env.SERVER_URL
-  }
 }
 
-module.exports = nextConfig
+module.exports = {
+  async headers() {
+    return [{
+      source: "/(.*)",
+      headers: createSecureHeaders({
+        contentSecurityPolicy: {
+          directives: {
+            defaultSrc: "'self'",
+            styleSrc: ["'self'", "https://stackpath.bootstrapcdn.com"],
+          },
+        },
+        forceHTTPSRedirect: [true, { maxAge: 60 * 60 * 24 * 4, includeSubDomains: true }],
+        referrerPolicy: "same-origin",
+      })
+    }];
+  },
+  nextConfig,
+};
