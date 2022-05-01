@@ -10,10 +10,11 @@ module.exports = {
       headers: createSecureHeaders({
         contentSecurityPolicy: {
           directives: {
-            defaultSrc: "'self'",
-            styleSrc: ["'self'", "https://stackpath.bootstrapcdn.com"],
+            defaultSrc: ["'self'", "https://petbook-api.johanneskrabbe.com"],
+            styleSrc: ["'self'"],
           },
         },
+        xssProtection: "sanitize",
         forceHTTPSRedirect: [true, { maxAge: 60 * 60 * 24 * 4, includeSubDomains: true }],
         referrerPolicy: "same-origin",
       })
