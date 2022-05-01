@@ -3,6 +3,7 @@ const {createSecureHeaders} = require('next-secure-headers');
 
 const nextConfig = {
   reactStrictMode: true,
+  poweredByHeader: false,
 }
 
 module.exports = {
@@ -13,11 +14,11 @@ module.exports = {
         contentSecurityPolicy: {
           directives: {
             defaultSrc: ["'self'", "https://petbook-api.johanneskrabbe.com"],
-            styleSrc: ["'self'"],
+            styleSrc: ["'self'", "'unsafe-inline'"],
           },
         },
         xssProtection: "sanitize",
-        forceHTTPSRedirect: [true, { maxAge: 60 * 60 * 24 * 4, includeSubDomains: true }],
+        forceHTTPSRedirect: true,
         referrerPolicy: "same-origin",
       })
     }];
