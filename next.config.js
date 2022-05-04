@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const {createSecureHeaders} = require('next-secure-headers');
+const { createSecureHeaders } = require('next-secure-headers');
 
 const nextConfig = {
   reactStrictMode: true,
@@ -13,7 +13,7 @@ module.exports = {
       headers: createSecureHeaders({
         contentSecurityPolicy: {
           directives: {
-            defaultSrc: ["'self'", "https://petbook-api.johanneskrabbe.com"],
+            defaultSrc: ["'self'", "'unsafe-eval'", "https://petbook-api.johanneskrabbe.com", "http://localhost:3001"],
             styleSrc: ["'self'", "'unsafe-inline'"],
           },
         },
