@@ -45,7 +45,11 @@ const Home: NextPage = () => {
 				}
 			})
 			.catch(console.error);
-		return <p>Loading</p>;
+		return (
+			<div className="font-sans min-h-screen bg-gray-900">
+				<p>Loading</p>
+			</div>
+		)
 	}
 };
 
