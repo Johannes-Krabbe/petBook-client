@@ -9,6 +9,7 @@ import Router, { useRouter } from "next/router";
 const Register: NextPage = () => {
 	const [createAccountMessage, setCreateAccountMessage] = React.useState("");
 
+
 	const login = (
 		username: string,
 		name: string,
@@ -35,7 +36,6 @@ const Register: NextPage = () => {
 				setCreateAccountMessage(e.response.data.message);
 			});
 	};
-
 	return (
 		<div>
 			<NavBar />
@@ -131,6 +131,7 @@ const Register: NextPage = () => {
 			</div>
 		</div>
 	);
+
 };
 
 export default Register;

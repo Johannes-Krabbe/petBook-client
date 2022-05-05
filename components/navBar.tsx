@@ -7,7 +7,6 @@ import Router from "next/router";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { IconButton } from "@mui/material";
 
-interface NavBarProps {}
 
 export const NavBar = () => {
 	const [userName, setUserName] = useState("");
@@ -25,7 +24,9 @@ export const NavBar = () => {
 					setUserName(response.data.username);
 				}
 			})
-			.catch((e) => {});
+			.catch((e) => {
+				console.error(e)
+			});
 	});
 
 	return (
@@ -37,6 +38,9 @@ export const NavBar = () => {
 				<div className="flex flex-row-reverse">
 					{userName ? (
 						<div className="flex flex-row items-center text-white text-xl text-right font-bold mr-10">
+							<a className="mr-10" href="/me/pets">
+								Pets
+							</a>
 							<a className="mr-4" href="/me">
 								{userName}
 							</a>

@@ -18,10 +18,10 @@ const Home: NextPage = () => {
 
 				<div className="flex flex-col items-center h-full">
 					<div className="h-full w-2/4 border border-x-2 border-y-0 border-gray-700">
-						<div className="items-center mt-20">
+						<div className="items-center w-1/3 mt-20">
 							{posts.map((post: any) => (
 								<div
-									key={post.userName}
+									key={post.id}
 									className="flex flex-col w-full items-center my-5"
 								>
 									<Post
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
 		);
 	} else {
 		request
-			.get("/pet/getAllPosts")
+			.get("/post/getAllPosts")
 			.then((response) => {
 				if (response.status === 200) {
 					setPosts(response.data.reverse());

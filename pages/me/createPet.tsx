@@ -4,7 +4,7 @@ import { request } from "../../helpers/context";
 import { NextPage } from "next";
 import React from "react";
 import { NavBar } from "../../components/navBar";
-import Router, { useRouter } from "next/router";
+import Router from "next/router";
 
 const createPet: NextPage = () => {
 	const [createAccountMessage, setCreateAccountMessage] = React.useState("");
@@ -32,13 +32,13 @@ const createPet: NextPage = () => {
 			});
 	};
 	/**
-        {
-            "name" : "johannes.krabbe",
-            "species" : "foo@bar.net",
-            "race" : "Johannes Krabbe",
-            "gender" : "I am Johannes, 19, from Berlin",
-        }
-        */
+				{
+						"name" : "johannes.krabbe",
+						"species" : "foo@bar.net",
+						"race" : "Johannes Krabbe",
+						"gender" : "I am Johannes, 19, from Berlin",
+				}
+				*/
 	return (
 		<div>
 			<NavBar />

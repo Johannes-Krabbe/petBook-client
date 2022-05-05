@@ -8,7 +8,7 @@ interface PostProps {
 
 export const Post: React.FC<PostProps> = ({ userName, content, petName }) => {
 	return (
-		<div className="w-2/3 border-solid border-2 border-gray-700 bg-gray-800">
+		<div className="w-full bg-gray-800">
 			<div className="flex flex-row items-center mb-3 mt-3">
 				<p className="text-gray-500 text-sm ml-5">
 					<span className="text-white font-bold text-xl">{petName} </span> from{" "}
