@@ -16,22 +16,20 @@ const Home: NextPage = () => {
 			<div className="font-sans min-h-screen bg-gray-900">
 				<NavBar />
 
-				<div className="flex flex-col items-center h-full">
-					<div className="h-full w-2/4 border border-x-2 border-y-0 border-gray-700">
-						<div className="items-center w-1/3 mt-20">
-							{posts.map((post: any) => (
-								<div
-									key={post.id}
-									className="flex flex-col w-full items-center my-5"
-								>
-									<Post
-										userName={post.pet.owner.name}
-										petName={post.pet.name}
-										content={post.content}
-									/>
-								</div>
-							))}
-						</div>
+				<div className="flex flex-col items-center w-full h-full">
+					<div className="items-center w-1/3 mt-20">
+						{posts.map((post: any) => (
+							<div
+								key={post.id}
+								className="flex flex-col w-full items-center my-5"
+							>
+								<Post
+									userName={post.pet.owner.name}
+									petName={post.pet.name}
+									content={post.content}
+								/>
+							</div>
+						))}
 					</div>
 				</div>
 			</div>
