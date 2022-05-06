@@ -24,20 +24,24 @@ const Pets: NextPage = () => {
 			<div className="font-sans min-h-screen bg-gray-900">
 				<NavBar />
 
-				<div className="flex flex-col items-center h-full">
-					<div className="h-full w-2/4">
-						{pets.map((pet) => (
-							<div key={pet.id}>
-								<Pet
-									name={pet.name}
-									species={pet.species}
-									race={pet.race}
-									gender={pet.gender}
-									uuid={pet.uuid}
-								/>
-							</div>
-						))}
-					</div>
+				<div className="flex flex-col w-screen items-center h-full">
+
+					{pets.map((pet) => (
+						<div key={pet.id} className="w-screen">
+							<Pet
+								name={pet.name}
+								species={pet.species}
+								race={pet.race}
+								gender={pet.gender}
+								uuid={pet.uuid}
+							/>
+						</div>
+					))}
+					<p className="mt-10 text-gray-300 text-center">
+						<a href="/me/createPet">
+							Create a new pet here!
+						</a>
+					</p>
 				</div>
 			</div>
 		);
