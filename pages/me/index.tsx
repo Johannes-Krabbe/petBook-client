@@ -43,28 +43,29 @@ const Me: NextPage = () => {
 					</div>
 				</div>
 
-				<div className="flex flex-col items-center mt-10 w-full">
+				<div className="flex flex-col items-center mt-10 w-full font-sans">
 					<div className="w-1/3">
 						<p className="text-white text-xl font-bold"> Recent Posts </p>
-						{user.pets.map((pet: any) => (
+						{user.posts.map((post: any) => (
 							<div
-								key={pet.id}
-								className="flex flex-col w-full items-center my-5"
+								key={post.id}
+								className="flex flex-col w-full my-3 bg-gray-800"
 							>
-
-								{pet.posts.map((post: any) => (
-									<div key={post.id} className="w-full bg-gray-800 mt-2">
-										<div className="flex flex-row items-center mb-3 mt-3">
-											<p className="text-gray-500 text-sm ml-5">
-												<span className="text-white font-bold text-xl">{pet.name} </span> from{" "}
-												{user.userName}
-											</p>
-										</div>
-										<p className="text-white my-3 mx-5">{post.content}</p>
-									</div>
-
-								))}
+								<div className="flex flex-row mx-3 ">
+									{post.pet ?
+										<p className="text-gray-500 text-sm mt-3">
+											<span className="text-white font-bold text-xl">{post.pet.name} </span> from{" "}
+											{user.username}
+										</p>
+										:
+										<p className="text-gray-500 mt-2">
+											<span className="text-sm">{user.username}</span>
+										</p>
+									}
+								</div>
+								<p className="text-white my-3 mx-3 text-2xl">{post.content}</p>
 							</div>
+
 						))}
 
 					</div>

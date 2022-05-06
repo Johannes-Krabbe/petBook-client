@@ -5,6 +5,9 @@ import { deleteCookie } from "../helpers/cookieHelper";
 import Router from "next/router";
 
 import LogoutIcon from "@mui/icons-material/Logout";
+import PetsIcon from "@mui/icons-material/Pets";
+import PersonIcon from "@mui/icons-material/Person";
+import SettingsIcon from "@mui/icons-material/Settings";
 import { IconButton } from "@mui/material";
 
 
@@ -38,15 +41,29 @@ export const NavBar = () => {
 				<div className="flex flex-row-reverse">
 					{userName ? (
 						<div className="flex flex-row items-center text-white text-xl text-right font-bold mr-10">
-							<a className="mr-10" href="/me/pets">
-								Pets
-							</a>
-							<a className="mr-4" href="/me">
-								{userName}
-							</a>
-							<IconButton size="small" onClick={() => logout()}>
-								<LogoutIcon />
-							</IconButton>
+							<div className="ml-3">
+								<IconButton size="small" onClick={() => Router.push("/me/pets")}>
+									<PetsIcon />
+								</IconButton>
+							</div>
+
+							<div className="ml-3">
+								<IconButton size="small" onClick={() => Router.push("/me/")}>
+									<PersonIcon />
+								</IconButton>
+							</div>
+
+							<div className="ml-3">
+								<IconButton size="small" onClick={() => Router.push("/me/editMe")}>
+									<SettingsIcon />
+								</IconButton>
+							</div>
+
+							<div className="ml-3">
+								<IconButton size="small" onClick={() => logout()}>
+									<LogoutIcon />
+								</IconButton>
+							</div>
 						</div>
 					) : (
 						<p className="text-white text-xl text-right font-bold mr-20">

@@ -26,7 +26,7 @@ export const Pet: React.FC<PetProps> = ({
 
 	const createPost = (content: string) => {
 		request
-			.post("/pet/createPost", {
+			.post("/post/create", {
 				petUuid: uuid,
 				content,
 			})
@@ -42,8 +42,8 @@ export const Pet: React.FC<PetProps> = ({
 	};
 
 	return (
-		<div className="flex flex-col items-center mt-20 w-full">
-			<div className="border-solid border-2 text-white border-gray-700 bg-gray-800 w-1/3">
+		<div className="flex flex-col items-center mt-20 w-screen">
+			<div className="text-white bg-gray-800 w-1/3">
 				<div className="flex flex-row my-3 ml-3 text-m">
 					<p className="font-bold">Name:&nbsp;&nbsp;</p>
 					<p> {name}</p>
